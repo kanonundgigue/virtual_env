@@ -1,0 +1,36 @@
+name: jupyterlab_stable
+channels:
+  - conda-forge
+  - defaults
+#dependencies:
+priorities: # conda
+  - jupyterlab=4
+  - cdo
+  - cartopy
+  - ipython
+  - ipympl
+  - matplotlib
+  - numpy
+  - netcdf4
+  - pandas
+  - pip
+  - scipy
+packages: # conda
+  - jinja2
+  - jupyter-server-mathjax
+  - jupyterlab-git
+  - jupyterlab_pygments
+  - jupyterlab_widgets
+  - nbconvert-core
+  - nbdime
+  - nbformat
+  - prompt-toolkit
+  - setuptools
+  - yaml
+pip:
+  - gtool3==0.6a0
+  - ipython-genutils
+  - jupyter-server-fileid
+  - jupyter-server-ydoc
+  - jupyter-ydoc
+  - basemap
