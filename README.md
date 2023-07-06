@@ -20,6 +20,11 @@
 	conda config --add channels conda-forge
 ```
 
+- Python上でパッケージをインストールできるようにする
+```shell
+	pip install pyyaml
+```
+
 ## 使い方
 
 ```shell
