@@ -29,7 +29,7 @@ cd ~/.virtual_env
 パッケージインストール先となる仮想環境のpathを確認する。
 
 ```
-mamba pyenv list
+mamba env list
 ```
 
 ぞろぞろと出てくる中で、
