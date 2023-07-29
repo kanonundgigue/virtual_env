@@ -7,7 +7,7 @@
 - 仮想環境を構築
 
 ```shell
-	mamba create -n py2023
+	mamba create -n py2023 python=3.11
 ```
 
 - 仮想環境をactivate
@@ -47,6 +47,11 @@
     sed -e "s|myenvpath|${my_virtual_env_path}|g" < install_sample.py > install.py
 ```
 
+スクリプト内で使用されるパッケージを先にインストールしておく。
+
+```shell
+	pip install pyyaml
+```
 
 スクリプト実行。
 
