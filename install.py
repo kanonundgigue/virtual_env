@@ -1,10 +1,18 @@
 # 環境設定YAMLファイルのパス
+<<<<<<< HEAD
 yaml_file_path = 'py2023.yml'
 # yamlファイルに書かれているパッケージ群の属性
 name_list=["priorities", "packages", "pip"]
 # 仮想環境のパス 自分の環境に書き換える
 virtual_env_path = '/data26/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023'
 
+=======
+yaml_file_path = 'jupyterlab_stable.yml'
+# yamlファイルに書かれているパッケージ群の属性
+name_list=["priorities", "packages", "pip"]
+# 仮想環境のパス
+virtual_env_path = '/Users/kanon/.pyenv/versions/mambaforge-22.9.0-0'
+>>>>>>> 08b3d708f4814af1fd82309ff29a907ec4b99cca
 # Import python packages
 import os
 import sys

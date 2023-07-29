@@ -3,7 +3,11 @@ channels:
   - conda-forge
   - defaults
 #dependencies:
+<<<<<<< HEAD:py2023.yml
 priorities: 
+=======
+priorities: # conda-forge
+>>>>>>> 08b3d708f4814af1fd82309ff29a907ec4b99cca:jupyterlab_stable.yml
   - jupyterlab=4
   - cdo
   - cartopy
@@ -15,7 +19,10 @@ priorities:
   - pandas
   - pip
   - scipy
+<<<<<<< HEAD:py2023.yml
   - basemap
+=======
+>>>>>>> 08b3d708f4814af1fd82309ff29a907ec4b99cca:jupyterlab_stable.yml
 packages: # mamba
   - jinja2
   - jupyter-server-mathjax
@@ -28,6 +35,7 @@ packages: # mamba
   - prompt-toolkit
   - setuptools
   - yaml
+  - basemap
 pip:
   - gtool3==0.6a0
   - ipython-genutils
