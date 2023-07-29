@@ -2,28 +2,20 @@
 
 ## このスクリプトを実行する前に
 
+- mambaforgeをインストール
+
 - 仮想環境を構築
 
 ```shell
-	conda create -n jupyterlab_stable python=3.11
+	mamba create -n py2023
 ```
 
 - 仮想環境をactivate
 
 ```shell
-	pyenv activate jupyterlab_stable
+	mamba activate py2023
 ```
 
-- コマンド群をインストールするチャンネルを追加。
-
-```shell
-	conda config --add channels conda-forge
-```
-
-- Python上でパッケージをインストールできるようにする
-```shell
-	pip install pyyaml
-```
 
 ## 使い方
 
