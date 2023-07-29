@@ -1,9 +1,9 @@
-name: jupyterlab_stable
+name: py2023
 channels:
   - conda-forge
   - defaults
 #dependencies:
-priorities: # conda
+priorities: 
   - jupyterlab=4
   - cdo
   - cartopy
@@ -15,7 +15,8 @@ priorities: # conda
   - pandas
   - pip
   - scipy
-packages: # conda
+  - basemap
+packages: # mamba
   - jinja2
   - jupyter-server-mathjax
   - jupyterlab-git
@@ -33,4 +34,4 @@ pip:
   - jupyter-server-fileid
   - jupyter-server-ydoc
   - jupyter-ydoc
-  - basemap
+
