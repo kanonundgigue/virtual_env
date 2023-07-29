@@ -1,6 +1,6 @@
 # pyenv 仮想環境の移植をする
 
-## このスクリプトを実行する前に
+## 事前準備
 
 - mambaforgeをインストール
 
@@ -19,6 +19,39 @@
 
 ## 使い方
 
+リポジトリをクローンする。
+
 ```shell
-	python install.py
+    git@github.com:kanonundgigue/virtual_env.git ~/.virtual_env
+    cd ~/.virtual_env
 ```
+
+パッケージインストール先となる仮想環境のpathを確認する。
+
+```shell
+    mamba pyenv list
+```
+
+ぞろぞろと出てくる中で、
+
+```shell
+    active env location : /home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023
+```
+
+といった行がみつかる。
+
+仮想環境のパス(ここでは`/home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023` )を`my_virtual_env_path` に設定し、インストール用スクリプトを作成。
+
+```shell
+    my_virtual_env_path="/home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023"
+    sed -e "s|myenvpath|${my_virtual_env_path}|g" < install_sample.py > install.py
+```
+
+
+スクリプト実行。
+
+```shell
+    python install.py &
+```
+
+
