@@ -65,8 +65,6 @@ if len(mamba_packages) > 0:
     cmd(f"echo {mamba_packages} >>logfile")
     # パッケージをインストール
     install_packages(virtual_env_path, mamba_packages, opt="-y", source="mamba")
-else:
-    sys.exit()
 
 if len(pip_packages) > 0:    
     pip_packages = make_package_list (pip_packages)
@@ -74,8 +72,6 @@ if len(pip_packages) > 0:
     cmd(f"echo {pip_packages} >>logfile")
     # パッケージをインストール
     install_packages(virtual_env_path, pip_packages, source="pip")
-else:
-    sys.exit()
     
 # 実行終了
 print(f"Finished! - Check logs: {os.getcwd()}/logfile")
