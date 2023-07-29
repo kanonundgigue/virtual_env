@@ -54,7 +54,7 @@ sed -e "s|myenvpath|${my_virtual_env_path}|g" < install_sample.py > install.py
 スクリプト内で使用されるパッケージを先にインストールしておく。
 
 ```
-pip install pyyaml
+mamba install pyyaml
 ```
 
 スクリプト実行。
