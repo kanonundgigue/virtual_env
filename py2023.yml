@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 #dependencies:
-priorities: # conda-forge
+priorities: 
   - jupyterlab=4
   - cdo
   - cartopy
@@ -15,6 +15,7 @@ priorities: # conda-forge
   - pandas
   - pip
   - scipy
+  - basemap
 packages: # mamba
   - jinja2
   - jupyter-server-mathjax
@@ -27,7 +28,6 @@ packages: # mamba
   - prompt-toolkit
   - setuptools
   - yaml
-  - basemap
 pip:
   - gtool3==0.6a0
   - ipython-genutils
