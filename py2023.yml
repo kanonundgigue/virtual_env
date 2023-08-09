@@ -16,6 +16,7 @@ priorities:
   - pip
   - scipy
   - basemap
+  - xarray
 packages: # mamba
   - jinja2
   - jupyter-server-mathjax
