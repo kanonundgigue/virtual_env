@@ -13,7 +13,7 @@ mamba create -n py2023 python=3.11
 - 仮想環境をactivate
 
 ```
-mamba activate py2023
+conda activate py2023
 ```
 
 
@@ -26,23 +26,10 @@ git@github.com:kanonundgigue/virtual_env.git ~/.virtual_env
 cd ~/.virtual_env
 ```
 
-パッケージインストール先となる仮想環境のpathを確認する。
-
-```
-mamba env list
-```
-
-ぞろぞろと出てくる中で、
-
-```
-active env location : /home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023
-```
-
-といった行がみつかる。
-
 仮想環境のパス(ここでは`/home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023`)を`my_virtual_env_path` に設定。
 
 ```
+my_virtual_env_path=`conda env list | grep py2023 | awk '{print $3}'`
 my_virtual_env_path="/home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023"
 ```
 
