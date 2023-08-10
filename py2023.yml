@@ -15,7 +15,7 @@ priorities:
   - pandas
   - pip
   - scipy
-  - basemap
+#  - basemap # 環境によってはインストールできない場合がある。
   - xarray
 packages: # be installed by mamba
   - jinja2
