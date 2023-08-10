@@ -1,2 +1,5 @@
 logfile
 install.py
+.ipynb_checkpoints
+__pycache__
+*~

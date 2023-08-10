@@ -16,7 +16,8 @@ priorities:
   - pip
   - scipy
   - basemap
-packages: # mamba
+  - xarray
+packages: # be installed by mamba
   - jinja2
   - jupyter-server-mathjax
   - jupyterlab-git
@@ -28,6 +29,10 @@ packages: # mamba
   - prompt-toolkit
   - setuptools
   - yaml
+  - cmocean
+  - statsmodels
+  - paramiko
+  - python-cdo
 pip:
   - gtool3==0.6a0
   - ipython-genutils
