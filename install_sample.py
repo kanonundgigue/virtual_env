@@ -22,6 +22,7 @@ def cmd(cmd):
 def load_packages_from_yaml(file_path, name_list=["dependencies"]):
     with open(file_path, 'r') as file:
         data = yaml.safe_load(file)
+        mamba_priority_packages=[]
         mamba_packages=[]
         pip_packages=[]
 
@@ -29,6 +30,8 @@ def load_packages_from_yaml(file_path, name_list=["dependencies"]):
             for pack in data.get(name, []):
                 if name == "pip":
                     pip_packages.append(pack)
+                elif name == "priorities":
+                    mamba_priority_packages.append(pack)
                 else:
                     mamba_packages.append(pack)
 
@@ -59,6 +62,13 @@ def install_packages(virtual_env_path, package_list, opt="", source="mamba"):
 # YAMLファイルからパッケージのリストを読み込む
 mamba_packages, pip_packages = load_packages_from_yaml(yaml_file_path, name_list=name_list)
 cmd(f"echo Executed on `date '+%Y-%m-%d %H:%M:%S'` > logfile")
+if len(mamba_priority_packages) > 0:
+    mamba_priority_packages = make_package_list (mamba_priority_packages)
+    cmd(f"echo '\n'Packages to be installed by mamba: >> logfile")
+    cmd(f"echo {mamba_packages} >>logfile")
+    # パッケージをインストール
+    install_packages(virtual_env_path, mamba_priority_packages, opt="-y", source="mamba")
+    
 if len(mamba_packages) > 0:
     mamba_packages = make_package_list (mamba_packages)
     cmd(f"echo '\n'Packages to be installed by mamba: >> logfile")
