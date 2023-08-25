@@ -1,4 +1,4 @@
-name: py2023
+name: paleoDA
 channels:
   - conda-forge
   - defaults
@@ -41,4 +41,4 @@ pip: # condaではinstallできないパッケージ群。conflictに注意。
   - jupyter-server-fileid
   - jupyter-server-ydoc
   - jupyter-ydoc
-
+  - lipd
