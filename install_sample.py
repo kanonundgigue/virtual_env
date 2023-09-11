@@ -35,7 +35,7 @@ def load_packages_from_yaml(file_path, name_list=["dependencies"]):
                 else:
                     mamba_packages.append(pack)
 
-        return mamba_packages, pip_packages
+        return mamba_priority_packages, mamba_packages, pip_packages
         
 # リストからmambaで読み込むパッケージを並べた文字列を作成
 def make_package_list(packages):
@@ -60,7 +60,7 @@ def install_packages(virtual_env_path, package_list, opt="", source="mamba"):
     cmd(f"{source} install {opt} >> logfile")
 
 # YAMLファイルからパッケージのリストを読み込む
-mamba_packages, pip_packages = load_packages_from_yaml(yaml_file_path, name_list=name_list)
+mamba_priority_packages, mamba_packages, pip_packages = load_packages_from_yaml(yaml_file_path, name_list=name_list)
 cmd(f"echo Executed on `date '+%Y-%m-%d %H:%M:%S'` > logfile")
 if len(mamba_priority_packages) > 0:
     mamba_priority_packages = make_package_list (mamba_priority_packages)
