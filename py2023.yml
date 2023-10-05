@@ -34,7 +34,8 @@ packages: # be installed by mamba
   - paramiko
   - python-cdo
   - gcc
-  -  fortran-magic
+  - fortran-magic
+  - seaborn
 pip:
   - gtool3==0.6a0
   - ipython-genutils
@@ -42,3 +43,4 @@ pip:
   - jupyter-server-ydoc
   - jupyter-ydoc
   - jupyterlab-spreadsheet-editor
+  - jupyterlab-language-pack-ja-JP
