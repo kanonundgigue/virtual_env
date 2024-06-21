@@ -1,0 +1,48 @@
+name: py2024
+channels:
+  - conda-forge
+  - defaults
+#dependencies:
+priorities:
+  - jupyterlab
+  - cdo
+  - cartopy
+  - ipython
+  - ipympl
+  - matplotlib
+  - numpy
+  - netcdf4
+  - pandas
+  - pip
+  - scipy
+  - basemap # 環境によってはインストールできない場合がある。
+  - xarray
+packages: # be installed by mamba
+  - jinja2
+  - jupyter-server-mathjax
+  - jupyterlab_pygments
+  - jupyterlab_widgets
+  - nbconvert-core
+  - nbdime
+  - nbformat
+  - prompt-toolkit
+  - setuptools
+  - yaml
+  - cmocean
+  - statsmodels
+  - paramiko
+  - python-cdo
+  - gcc
+  - fortran-magic
+  - seaborn
+pip:
+  - ipython-genutils
+  - jupyter-server-fileid
+  - jupyter-server-ydoc
+  - jupyter-ydoc
+  - jupyterlab-spreadsheet-editor
+  - jupyterlab-language-pack-ja-JP
+###
+# GitHubから直接インストールするコマンド
+# pip install git+https://github.com/hyungjun/gtool3
+# pip install git+https://github.com/k1bb/xgtool3

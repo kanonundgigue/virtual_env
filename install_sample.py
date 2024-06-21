@@ -1,5 +1,5 @@
 # 環境設定YAMLファイルのパス
-yaml_file_path = 'py2023.yml'
+yaml_file_path = 'py2024.yml'
 # yamlファイルに書かれているパッケージ群の属性
 name_list=["priorities", "packages", "pip"]
 # 仮想環境のパス
@@ -13,7 +13,7 @@ import yaml
 
 def cmd(cmd):
     # Pythonでシェルコマンドを動かし、結果を取得する関数
-    # 参考 : https://qiita.com/inatatsu_csg/items/40b11701d256a84a0510 
+    # 参考 : https://qiita.com/inatatsu_csg/items/40b11701d256a84a0510
     import subprocess
     process = (subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True).communicate()[0]).decode('utf-8')[:-1].split("\n")
     return process
@@ -36,16 +36,16 @@ def load_packages_from_yaml(file_path, name_list=["dependencies"]):
                     mamba_packages.append(pack)
 
         return mamba_priority_packages, mamba_packages, pip_packages
-        
+
 # リストからmambaで読み込むパッケージを並べた文字列を作成
 def make_package_list(packages):
     package_list=""
     for n in range(len(packages)):
         if not type(packages[n]) is dict:
             package_list += f"{packages[n]} "
-            
+
     return(package_list)
-            
+
 # 仮想環境に、パッケージをインストールする
 def install_packages(virtual_env_path, package_list, opt="", source="mamba"):
     # 各パッケージをインストール
@@ -55,7 +55,7 @@ def install_packages(virtual_env_path, package_list, opt="", source="mamba"):
         opt = f"{package_list}"
     else:
         sys.exist(f"No defined source: {source}")
-        
+
     print(f"{source} install {opt} >> logfile")
     cmd(f"{source} install {opt} >> logfile")
 
@@ -68,7 +68,7 @@ if len(mamba_priority_packages) > 0:
     cmd(f"echo {mamba_packages} >>logfile")
     # パッケージをインストール
     install_packages(virtual_env_path, mamba_priority_packages, opt="-y", source="mamba")
-    
+
 if len(mamba_packages) > 0:
     mamba_packages = make_package_list (mamba_packages)
     cmd(f"echo '\n'Packages to be installed by mamba: >> logfile")
@@ -76,12 +76,12 @@ if len(mamba_packages) > 0:
     # パッケージをインストール
     install_packages(virtual_env_path, mamba_packages, opt="-y", source="mamba")
 
-if len(pip_packages) > 0:    
+if len(pip_packages) > 0:
     pip_packages = make_package_list (pip_packages)
     cmd(f"echo '\n'Packages to be installed by pip: >> logfile")
     cmd(f"echo {pip_packages} >>logfile")
     # パッケージをインストール
     install_packages(virtual_env_path, pip_packages, source="pip")
-    
+
 # 実行終了
 print(f"Finished! - Check logs: {os.getcwd()}/logfile")
