@@ -22,7 +22,7 @@ conda activate py2023
 リポジトリをクローンする。
 
 ```
-git@github.com:kanonundgigue/virtual_env.git ~/.virtual_env
+git clone git@github.com:kanonundgigue/virtual_env.git ~/.virtual_env
 cd ~/.virtual_env
 ```
 
