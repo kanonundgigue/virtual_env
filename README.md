@@ -30,7 +30,7 @@ cd ~/.virtual_env
 
 ```
 my_virtual_env_path=`conda env list | grep py2023 | awk '{print $3}'`
-my_virtual_env_path="/home/kanon/.pyenv/versions/mambaforge-22.9.0-0/envs/py2023"
+echo $my_virtual_env_path
 ```
 
 インストール用スクリプト`install.py`を作成。
